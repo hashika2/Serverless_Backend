@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize");
 const databaseEnv = require("../../environments");
-const userEntity = require("./userEntity");
+const personEntity = require( "./personEntity");
+const userEntity = require("./usersEntity");
 
 const sequelize = new Sequelize(
   databaseEnv.database,
@@ -21,5 +22,7 @@ const sequelize = new Sequelize(
   }
 );
 
+const Person = personEntity(sequelize, Sequelize);
 const User = userEntity(sequelize, Sequelize);
-module.exports = { User };
+
+module.exports = { User,Person };

@@ -9,7 +9,8 @@ module.exports = {
   
     TABLES:{
       APPLICATION_AUDIT:'ApplicationAudit',
-      PERSON: "persons"
+      PERSON: "persons",
+      USER:"users"
     },
 
     ADAPTERS: {

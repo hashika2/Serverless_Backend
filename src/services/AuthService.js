@@ -1,21 +1,16 @@
-const { User } = require("../shared/database/entities");
+const getAllData = require("../shared/database/repositories/PersonsRepo");
 
 const AuthService = async (event) => {
   try {
-    const user = await User.findAll({
-      where:{
-        firstName:'hashika'
-      },
-      attributes:['firstName','lastName']
-    });
+    const user = await getAllData();
     return {
       body: JSON.stringify(
         {
           message: "Go Serverless v1.0! Your function executed successfully!",
-          name: user
+          name: user,
         },
         null,
-        2,
+        2
       ),
     };
   } catch (error) {
