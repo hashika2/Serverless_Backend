@@ -28,6 +28,19 @@ functions:
             - x-device
             - x-browser
             - content-type
+  setStep:
+    handler: index.setStep
+    events:
+     - http:
+         path: auth/step
+         method: post
+         cors:
+          origin: '*'
+          headers:
+            - x-source
+            - x-device
+            - x-browser
+            - content-type
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)

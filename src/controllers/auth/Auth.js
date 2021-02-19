@@ -1,7 +1,13 @@
-const AuthService = require("../../services/AuthService");
+const {
+  AuthService,
+  setStepFunService,
+} = require("../../services/AuthService");
 
 const Auth = async (event) => {
   return await AuthService(event);
 };
 
-module.exports = Auth;
+const Step = async (event) => {
+  return await setStepFunService(event);
+};
+module.exports = { Auth, Step };
